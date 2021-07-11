@@ -1,0 +1,157 @@
+\documentclass[11pt]{article}
+
+% NOTE: Add in the relevant information to the commands below; or, if you'll be using the same information frequently, add these commands at the top of paolo-pset.tex file. 
+\newcommand{\name}{Paolo Adajar}
+\newcommand{\email}{paoloadajar@mit.edu}
+\newcommand{\classnum}{14.XX}
+\newcommand{\subject}{Name of the Subject}
+\newcommand{\instructors}{John Doe, Jane Roe}
+\newcommand{\assignment}{Problem Set 1}
+\newcommand{\semester}{Fall 2021}
+\newcommand{\duedate}{2021-09-01}
+
+% NOTE: Defining collaborators is optional; to not list collaborators, comment out the line below.
+\newcommand{\collaborators}{Alyssa P. Hacker (\texttt{aphacker}), Ben Bitdiddle (\texttt{bitdiddle})}
+
+\input{paolo-pset.tex}
+
+% NOTE: To compile a version of this pset without problems, solutions, or reflections, uncomment the relevant line below.
+
+%\excludeversion{problem}
+%\excludeversion{solution}
+%\excludeversion{reflection}
+
+\begin{document}	
+	
+	% Use the \psetheader command at the beginning of a pset. 
+	\psetheader
+	
+	\section*{Problem 1 \points[Generic Textbook 0.1]{5}}
+	\begin{problem}
+		This is a pset template made by Paolo Adajar (\href{mailto:paoloadajar@mit.edu}{\tt paoloadajar@mit.edu}) in Summer 2021. I intend to use this template throughout grad school for consistent-looking psets (both for classes I take and classes I am TA for). It includes environments for problems, solutions, and personal reflections.
+		
+		Problem text be written using the \texttt{problem} environment. To display the problem source and number of points, you can use the command \texttt{\textbackslash points[source]\{num-points\}}; it is demonstrated above. The argument \texttt{[source]} is optional. I recommend denoting each problem using \texttt{\textbackslash section*\{Problem n \textbackslash points[source]\{num-points\}\}}.
+		
+		This template with many pre-installed packages, including:
+		\begin{itemize}
+			\item \texttt{amsmath}, \texttt{amsthm}, \texttt{amsfonts}, \texttt{amssymb}, and \texttt{physics} for formatting math,
+			\item \texttt{natbib} for citations,
+			\item \texttt{graphicx}, \texttt{tabularx}, \texttt{caption}, \texttt{subcaption}, and more for formatting, and
+			\item \texttt{version} for excluding problems using \texttt{\textbackslash excludeversion\{problem\}} (with similar commands for both solutions and reflections).
+		\end{itemize}
+	
+		To use this package, add \texttt{\textbackslash input\{paolo-pset.tex\}} to the preamble. Additionally, using \texttt{\textbackslash newcommand}, define \texttt{\textbackslash name}, \texttt{\textbackslash email}, \texttt{\textbackslash classname}, \texttt{\textbackslash subject}, \texttt{\textbackslash instructor}, \texttt{\textbackslash assignment}, and \texttt{\textbackslash duedate}. Optionally, define \texttt{\textbackslash collaborators}.
+	\end{problem}
+	\begin{enumerate}
+		\item
+		\begin{problem}{\points{4}}
+		This is the text of the first subproblem, which also uses the \texttt{problem} environment. The \texttt{\textbackslash points} command can be passed as an optional argument to the \texttt{problem} environment to denote the number of points, using the syntax \texttt{\textbackslash problem\{\textbackslash points[source]\{num-points\}\}}. This is recommended for subproblems.
+		\end{problem}
+		\begin{solution}
+		This is the \texttt{solution} environment. It can include both inline math, like \(E=mc^2\), and display math text:
+		\[
+		\sum_{i=1}^{\infty} i = 1 + 2 + 3 + \cdots = -\frac{1}{12}
+		\]
+		The box that surrounds the \texttt{solution} environment will continue across a page break (if needed), as demonstrated with this solution.
+		
+		Solutions can also use theorems and proofs, following the \texttt{amsthm} package, such as
+		
+		\begin{theorem}[Pythagoras]
+			For a right triangle with legs of lengths $a$ and $b$ and hypotenuse of $c$, $$a^2 + b^2 = c^2.$$
+		\end{theorem}
+
+		\begin{proof}
+		Intermediate proofs will end with an empty box (\texttt{\textbackslash square}).
+		\end{proof}
+
+		After intermediate theorems and proofs, you're ready to end your solution. The end of your solution will be marked with a black box. If your solution ends with a \texttt{displaymath}, \texttt{enumerate}, or \texttt{itemize} environment, use \texttt{\textbackslash qedh} to end it with a black box without adding extra space at the end. (This is a modified version of \texttt{\textbackslash qedhere} from \texttt{amsthm}).
+		\end{solution}
+		\begin{reflection} This \texttt{reflection} environment, as expected, is used for reflections on solutions. Examples of things to include include:
+		\begin{itemize}
+			\item Failed solution paths taken
+			\item How the correct solution was found
+			\item What point this question has, pedagogically (and any concepts that were missed)
+			\item Related problems that may be interesting, useful, or cool
+		\end{itemize}
+		The hope is that these reflections will help with my own understanding of this content.
+		\end{reflection}
+	
+		\item
+		\begin{problem}{\points{1}}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in hendrerit diam. Curabitur quis metus facilisis, consectetur magna nec, dictum nulla. Ut vel lorem magna. Phasellus tristique mauris id leo varius commodo ac eget orci. Etiam ultricies, arcu id accumsan lobortis, mi purus luctus urna, a mattis felis odio sit amet risus. Vivamus suscipit sit amet ante sed volutpat. Sed bibendum egestas porta.
+		\end{problem}
+		\begin{solution}
+		Suspendisse laoreet ultrices hendrerit. Aenean accumsan ipsum metus, vel venenatis urna volutpat a. Vestibulum feugiat tincidunt metus, id bibendum lectus lacinia interdum. Etiam vitae purus a ante tempus cursus nec non elit. Proin sollicitudin ipsum non tincidunt venenatis. Mauris euismod massa quam, ut volutpat dui pharetra non. Curabitur bibendum a leo nec tristique. Aenean eu aliquam nisi. Proin lobortis nisi non nisi condimentum tempor. Donec a elementum ligula, ut consequat velit. Mauris vitae gravida nisi. Nunc convallis feugiat molestie. Curabitur sed ex hendrerit, tincidunt odio a, tincidunt sapien.
+		\end{solution}
+		\begin{reflection}
+		Phasellus gravida nibh rutrum, iaculis orci ut, posuere nisl. Vestibulum eleifend ipsum nunc, eu pellentesque dolor dapibus sed. Vivamus velit dolor, aliquam sed aliquam non, varius eu lorem. Curabitur laoreet enim eros, non aliquet eros porttitor vitae. Sed mattis quis nunc ut elementum. Vestibulum consequat augue at eleifend fermentum. Morbi fermentum mauris nisl, ac vulputate est tincidunt eu.
+		
+		Ut sem lectus, mollis eget ullamcorper in, fringilla a enim. Donec ultricies consectetur elit, a posuere sapien. Donec pharetra pharetra ante, vitae mattis dolor vestibulum placerat. Sed a elit commodo, auctor lorem nec, pretium nulla. Vivamus pellentesque mauris quis purus viverra, in convallis metus vestibulum. Pellentesque aliquet iaculis sem et accumsan. Donec eu arcu et neque convallis rutrum a eget magna. Etiam venenatis nisi pellentesque tincidunt porta. Aenean et auctor nibh. Curabitur et vestibulum enim, vitae tempus mauris. Duis posuere eleifend convallis. Fusce ligula magna, tincidunt at ante quis, pellentesque tempus ligula. Morbi tortor nibh, luctus id sem volutpat, fringilla vulputate nibh.
+		\end{reflection}
+	\end{enumerate}
+
+\section*{Problem 2}
+	\begin{enumerate}
+	\item
+	\begin{problem}
+	Text of problem.
+	\end{problem}
+	\begin{solution}
+	Text of solution.
+	\end{solution}
+	\begin{reflection}
+	Text of reflection.
+	\end{reflection}	
+
+	\item
+	\begin{problem}
+		Text of problem.
+	\end{problem}
+	\begin{solution}
+		Text of solution.
+	\end{solution}
+	\begin{reflection}
+		Text of reflection.
+	\end{reflection}	
+
+	\item
+	\begin{problem}
+	Text of problem.
+	\end{problem}
+	\begin{enumerate}
+		\item
+		\begin{problem}
+			Text of subproblem.
+		\end{problem}
+		\begin{solution}
+			Text of solution.
+		\end{solution}
+		\begin{reflection}
+			Text of reflection.
+		\end{reflection}	
+	
+		\item
+		\begin{problem}
+			Text of subproblem.
+		\end{problem}
+		\begin{solution}
+			Text of solution.
+		\end{solution}
+		\begin{reflection}
+			Text of reflection.
+		\end{reflection}	
+		
+		\item
+		\begin{problem}
+			Text of subproblem.
+		\end{problem}
+		\begin{solution}
+			Text of solution.
+		\end{solution}
+		\begin{reflection}
+			Text of reflection.
+		\end{reflection}	
+	\end{enumerate}
+\end{enumerate}
+	
+\end{document}

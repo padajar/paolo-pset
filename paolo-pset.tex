@@ -1,0 +1,103 @@
+% Copyright 2021 Paolo Adajar (padajar.com, paoloadajar@mit.edu)
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\usepackage{fullpage}
+\usepackage{enumitem}
+\usepackage{amsmath,amsthm,amsfonts, amssymb}
+\usepackage[pdftex, pdfauthor={\name}, pdftitle={\classnum~\assignment}]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{physics}
+\usepackage[many]{tcolorbox}
+\usepackage{version}
+\usepackage{ifthen}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+}
+
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2mm}
+
+
+\setlist[enumerate]{label=({\alph*})}
+\setlist[enumerate, 2]{label=({\roman*})}
+
+\allowdisplaybreaks[1]
+
+\newcommand{\psetheader}{
+	\ifthenelse{\isundefined{\collaborators}}{
+		\begin{center}
+			{\setlength{\parindent}{0cm} \setlength{\parskip}{0mm}
+				
+				{\textbf{\classnum~\semester:~\assignment} \hfill \name}
+				
+				\subject \hfill \href{mailto:\email}{\tt \email}
+				
+				Instructor(s):~\instructors \hfill Due Date:~\duedate	
+				
+				\hrulefill}
+		\end{center}
+	}{
+		\begin{center}
+			{\setlength{\parindent}{0cm} \setlength{\parskip}{0mm}
+				
+				{\textbf{\classnum~\semester:~\assignment} \hfill \name\footnote{Collaborator(s): \collaborators}}
+				
+				\subject \hfill \href{mailto:\email}{\tt \email}
+				
+				Instructor(s):~\instructors \hfill Due Date:~\duedate	
+				
+				\hrulefill}
+		\end{center}
+	}
+}
+
+\renewcommand{\thepage}{\classnum~\assignment \hfill \arabic{page}}
+
+\makeatletter
+\def\points{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2{{\ifthenelse{\equal{#2}{1}}{{[1 point, #1]}}{{[#2 points, #1]}}}}
+\def\@without#1{\ifthenelse{\equal{#1}{1}}{{[1 point]}}{{[#1 points]}}}
+\makeatother
+
+\newtheoremstyle{theorem-custom}%
+{}{}%
+{}{}%
+{\itshape}{.}%
+{ }%
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\theoremstyle{theorem-custom}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+
+\newenvironment{problem}[1]{\color{black} #1}{}
+
+\newenvironment{solution}{%
+	\leavevmode\begin{tcolorbox}[breakable, colback=green!5!white,colframe=green!75!black, enhanced jigsaw] \proof[\scshape Solution:] \setlength{\parskip}{2mm}%
+	}{\renewcommand{\qedsymbol}{$\blacksquare$} \endproof \end{tcolorbox}}
+
+\newenvironment{reflection}{\begin{tcolorbox}[breakable, colback=black!8!white,colframe=black!60!white, enhanced jigsaw, parbox = false]\textsc{Reflections:}}{\end{tcolorbox}}
+
+\newcommand{\qedh}{\renewcommand{\qedsymbol}{$\blacksquare$}\qedhere}
